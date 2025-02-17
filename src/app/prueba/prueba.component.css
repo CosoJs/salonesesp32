@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+
+.nav-bar, .footer {
+    background-color: #343a40;
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    margin: 20px auto;
+    padding: 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.card {
+    background: white;
+    color: black;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s;
+    box-shadow: 0px 1px 3.2px 0px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    transform: rotate(45deg);
+}
+
+.button {
+    background: #e9ecef;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.status {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'SF Pro Display', sans-serif;
+    color: black;
+    line-height: 18px;
+}
+  
+.button {
+    background-color: #F5F5F5;
+    color: black;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+.button:hover {
+    background-color: #e0e0e0;
+}  
+
+@media (max-width: 270px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

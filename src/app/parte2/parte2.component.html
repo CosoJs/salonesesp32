@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class Sync</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+      color: #343a40;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .container {
+      padding: 16px;
+      display: grid;
+      gap: 16px;
+      flex: 1;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .controls {
+      display: flex;
+      gap: 8px;
+    }
+    .button {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 12px;
+      flex: 1;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .footer {
+      background-color: white;
+      padding: 16px;
+      text-align: center;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <div><strong>class</strong>sync</div>
+    <div>PROFESOR</div>
+  </div>
+  <div class="container">
+    <div class="card"><strong>Salón 1.2</strong></div>
+    <div class="card">
+      <div class="card-title">Pizarrón</div>
+      <div class="controls">
+        <div class="button">⬆ Up</div>
+        <div class="button">⬇ Down</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Aire Acondicionado</div>
+      <div class="controls">
+        <div class="button">-</div>
+        <div class="button">22°C</div>
+        <div class="button">+</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Luces</div>
+      <div class="controls">
+        <div class="button">On</div>
+        <div class="button">Off</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Estado de Puertas</div>
+      <div style="font-size: 24px; font-weight: bold; text-align: center; margin-top: 12px;">Cerrada</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div>🏠 Home</div>
+  </div>
+</body>
+</html>
