@@ -13,21 +13,38 @@
     <div>PROFESOR</div>
   </div>
   <div class="container">
-    <div class="card"><strong>Salón</strong> {{ salones[0] }}</div>
     <div class="card">
-      <div class="card-title">Pizarrón</div>
-      <div class="controls">
-        <div class="button" (click)="agregarSenales()">⬆ a</div>
-        <div class="button">⬇ Down</div>
+      <strong>Salón</strong>
+      
+      <!-- Campo para ingresar ID de salón y agregar -->
+      <div class="card-title">
+        <input [(ngModel)]="nuevoSalon" placeholder="Ingresa el ID del salón" />
       </div>
+
+      <!-- Botón para subir a Firebase -->
+      <button (click)="subirAFirebaseSalones()">Agregar Salón</button>
     </div>
+
     <div class="card">
       <div class="card-title">Aire Acondicionado</div>
+      <div class="card-title centered">Registrar Señal IR</div>
       <div class="controls">
-        <div class="button">Encender</div>
-        <div class="button">Apagar</div>
+        <div class="button" (click)="guardarSenal(1)">Registrar Encendido</div>
+        <div class="button" (click)="guardarSenal(0)">Registrar Apagado</div>
       </div>
     </div>
+    
+    <!-- Modal controlado con ngClass -->
+    <div class="modal" [ngClass]="{ 'show-modal': mostrarModal, 'hide-modal': !mostrarModal }">
+      <div class="modal-content">
+        <h3>Registro de Señal IR</h3>
+        <textarea readonly class="input-cuadro">{{ textoModal }}</textarea>
+        <button (click)="registrar()">Registrar</button>
+        <button (click)="cerrarModal()">Cerrar</button>
+      </div>
+    </div>      
+
+    <!-- extras -->
     <div class="card">
       <div class="card-title">Horario</div>
       <div class="controls">
@@ -37,11 +54,11 @@
     </div>
     <div class="card">
       <div class="card-title">Estado de Puertas</div>
-      <div class="door-status">{{ estadoPuerta }}</div>
+      <div class="door-status"></div>
     </div>
   </div>
   <div class="footer">
-    <div class="button" (click)="subirAFirebase()">🏠 Home</div>
+    <div class="button">🏠 Home</div>
   </div>
 </body>
 </html>
