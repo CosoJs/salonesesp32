@@ -1,10 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Class Sync</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<body>
   <style>
     body {
       margin: 0;
@@ -52,6 +46,11 @@
       text-align: center;
       font-size: 16px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+    .button.active {
+      background: #007bff;
+      color: white;
     }
     .footer {
       background-color: white;
@@ -63,43 +62,48 @@
       box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
     }
   </style>
-</head>
-<body>
+
   <div class="nav-bar">
-    <div><strong>class</strong>sync</div>
-    <div>PROFESOR</div>
+    <div><strong>Class </strong>Sync</div>
+    <div>Profesor</div>
   </div>
+  
   <div class="container">
-    <div class="card"><strong>Salón 1.2</strong></div>
+    <div class="card"><strong>Salón {{ salonId }}</strong></div>
+
     <div class="card">
       <div class="card-title">Pizarrón</div>
       <div class="controls">
-        <div class="button">⬆ Up</div>
-        <div class="button">⬇ Down</div>
+        <div class="button" [class.active]="datosSalon.pizarron === 0" (click)="actualizarValor('pizarron', 0)">Up</div>
+        <div class="button" [class.active]="datosSalon.pizarron === 1" (click)="actualizarValor('pizarron', 1)">Down</div>
       </div>
     </div>
+
     <div class="card">
       <div class="card-title">Aire Acondicionado</div>
       <div class="controls">
-        <div class="button">-</div>
-        <div class="button">22°C</div>
-        <div class="button">+</div>
+        <div class="button" [class.active]="datosSalon.clima === 0" (click)="actualizarValor('clima', 0)">OFF</div>
+        <div class="button" [class.active]="datosSalon.clima === 1" (click)="actualizarValor('clima', 1)">ON</div>
       </div>
     </div>
+
     <div class="card">
       <div class="card-title">Luces</div>
       <div class="controls">
-        <div class="button">On</div>
-        <div class="button">Off</div>
+        <div class="button" [class.active]="datosSalon.luces === 0" (click)="actualizarValor('luces', 0)">OFF</div>
+        <div class="button" [class.active]="datosSalon.luces === 1" (click)="actualizarValor('luces', 1)">ON</div>
       </div>
     </div>
+
     <div class="card">
       <div class="card-title">Estado de Puertas</div>
-      <div style="font-size: 24px; font-weight: bold; text-align: center; margin-top: 12px;">Cerrada</div>
+      <div style="font-size: 24px; font-weight: bold; text-align: center; margin-top: 12px;">
+        {{ datosSalon.puertas }}
+      </div>
     </div>
   </div>
+
   <div class="footer">
-    <div>🏠 Home</div>
+    <div class="button" (click)="subirCambios()">💾 Guardar Cambios</div>
   </div>
 </body>
-</html>
